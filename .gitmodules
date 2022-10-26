@@ -1,0 +1,7 @@
+[submodule "JSCoq-Webpage/jscoq_test/static/jscoq"]
+	path = JSCoq-Webpage/jscoq_test/static/jscoq
+	url = https://github.com/jscoq/jscoq
+[submodule "JSCoq-Webpage/jscoq_test/static/sml-to-coq"]
+	path = JSCoq-Webpage/jscoq_test/static/sml-to-coq
+	url = https://github.com/meta-logic/sml-to-coq/
+	branch = generating_induction_principles
