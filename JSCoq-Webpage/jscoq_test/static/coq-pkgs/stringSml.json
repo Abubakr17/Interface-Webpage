@@ -1,0 +1,14 @@
+{
+    "name": "stringSml",
+    "deps": [],
+    "archive": "stringSml.coq-pkg",
+    "pkgs": [
+      {
+        "pkg_id": ["stringSml"],
+        "vo_files": [
+          [ "stringSml.vo", null ]
+        ],
+        "cma_files": [ ]
+      }
+    ]
+  }

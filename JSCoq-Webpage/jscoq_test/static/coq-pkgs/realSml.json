@@ -1,0 +1,14 @@
+{
+    "name": "realSml",
+    "deps": [],
+    "archive": "realSml.coq-pkg",
+    "pkgs": [
+      {
+        "pkg_id": ["realSml"],
+        "vo_files": [
+          [ "realSml.vo", null ]
+        ],
+        "cma_files": [ ]
+      }
+    ]
+  }

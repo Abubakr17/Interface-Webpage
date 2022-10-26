@@ -1,0 +1,33 @@
+# General ignores
+*~
+.*.swp
+.cache
+/dist
+/bin
+
+# Local build configuration file
+/config.inc
+
+# Externals
+/_vendor*
+
+# Dune stuff
+_build
+.merlin
+*.install
+
+# Node stuff
+node_modules
+# - npm packages
+/*.tgz
+
+# Links for in-place serving
+coq-pkgs
+/backend/jsoo/jscoq_worker.bc.cjs
+/backend/wasm/wacoq_worker.bc
+*.wasm
+
+# Apple stuff
+.DS_Store
+.AppleDouble
+

@@ -1,0 +1,33 @@
+.big-heading {
+    font-size: 70pt;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    padding: 5px 50px;
+    color: white;
+
+}
+
+.header {
+    padding-top: 0.1em;
+    background-color: #0066FF;
+}
+
+.files {
+    text-align: center;
+    margin-top: 10vw;
+    font-size: 20pt;
+    font-weight: bold;
+
+}
+
+.inp {
+    font-size: x-large;
+    margin-top: 2vw;
+    margin-left: 22vw;
+}
+
+.button {
+    margin-top: 3vw;
+    font-size: x-large;
+}

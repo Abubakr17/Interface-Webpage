@@ -1,0 +1,14 @@
+{
+    "name": "listPairSml",
+    "deps": [],
+    "archive": "listPairSml.coq-pkg",
+    "pkgs": [
+      {
+        "pkg_id": ["listPairSml"],
+        "vo_files": [
+          [ "listPairSml.vo", null ]
+        ],
+        "cma_files": [ ]
+      }
+    ]
+  }

@@ -1,0 +1,14 @@
+{
+    "name": "notationsSml",
+    "deps": [],
+    "archive": "notationsSml.coq-pkg",
+    "pkgs": [
+      {
+        "pkg_id": ["notationsSml"],
+        "vo_files": [
+          [ "notationsSml.vo", null ]
+        ],
+        "cma_files": [ ]
+      }
+    ]
+  }

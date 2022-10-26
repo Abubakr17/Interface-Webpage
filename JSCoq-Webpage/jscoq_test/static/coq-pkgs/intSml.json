@@ -1,0 +1,14 @@
+{
+    "name": "intSml",
+    "deps": [],
+    "archive": "intSml.coq-pkg",
+    "pkgs": [
+      {
+        "pkg_id": ["intSml"],
+        "vo_files": [
+          [ "intSml.vo", null ]
+        ],
+        "cma_files": [ ]
+      }
+    ]
+  }

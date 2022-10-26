@@ -1,0 +1,14 @@
+{
+    "name": "stringCvtSml",
+    "deps": [],
+    "archive": "stringCvtSml.coq-pkg",
+    "pkgs": [
+      {
+        "pkg_id": ["stringCvtSml"],
+        "vo_files": [
+          [ "stringCvtSml.vo", null ]
+        ],
+        "cma_files": [ ]
+      }
+    ]
+  }

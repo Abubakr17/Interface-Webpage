@@ -1,0 +1,14 @@
+{
+    "name": "optionSml",
+    "deps": [],
+    "archive": "optionSml.coq-pkg",
+    "pkgs": [
+      {
+        "pkg_id": ["optionSml"],
+        "vo_files": [
+          [ "optionSml.vo", null ]
+        ],
+        "cma_files": [ ]
+      }
+    ]
+  }

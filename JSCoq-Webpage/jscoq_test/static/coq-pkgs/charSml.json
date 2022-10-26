@@ -1,0 +1,14 @@
+{
+    "name": "charSml",
+    "deps": [],
+    "archive": "charSml.coq-pkg",
+    "pkgs": [
+      {
+        "pkg_id": ["charSml"],
+        "vo_files": [
+          [ "charSml.vo", null ]
+        ],
+        "cma_files": [ ]
+      }
+    ]
+  }

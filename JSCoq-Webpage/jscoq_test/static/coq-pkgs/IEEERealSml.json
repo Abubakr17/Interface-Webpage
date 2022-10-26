@@ -1,0 +1,14 @@
+{
+    "name": "IEEERealSml",
+    "deps": [],
+    "archive": "IEEERealSml.coq-pkg",
+    "pkgs": [
+      {
+        "pkg_id": ["IEEERealSml"],
+        "vo_files": [
+          [ "IEEERealSml.vo", null ]
+        ],
+        "cma_files": [ ]
+      }
+    ]
+  }

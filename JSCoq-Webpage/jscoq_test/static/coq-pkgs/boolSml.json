@@ -1,0 +1,14 @@
+{
+    "name": "boolSml",
+    "deps": [],
+    "archive": "boolSml.coq-pkg",
+    "pkgs": [
+      {
+        "pkg_id": ["boolSml"],
+        "vo_files": [
+          [ "boolSml.vo", null ]
+        ],
+        "cma_files": [ ]
+      }
+    ]
+  }
