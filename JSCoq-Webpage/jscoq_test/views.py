@@ -36,7 +36,47 @@ def startPage(request):
             with open('jscoq_test/static/vfiles/tmp2.v') as vfile:
                 txt = vfile.readlines()
             
-            return render(request, 'index3.html', {'txt': txt})
+            print(txt)
+            idx = txt.index('Generalizable All Variables.\n')
+
+            code = txt[idx+2:]
+            indices = [i for i in range(len(code)) if 'Equations' in code[i] or 'Fixpoint' in code[i] or 'Inductive' in code[i]]
+            print(f"\n indices are {indices}")
+
+            EQS = []
+            IND = []
+            FIX = []
+
+            num_idx = len(indices)
+            for k in range(num_idx):
+                if k < num_idx - 1:
+                    end = indices[k + 1]
+                else:
+                    end = len(code)
+                
+                if 'Equations' in code[indices[k]]:
+                    EQS += code[indices[k] : end]
+                
+                elif 'Fixpoint' in code[indices[k]]:
+                    FIX += code[indices[k] : end]
+                
+                else:
+                    IND += code[indices[k] : end]
+            
+
+            ## Trimming extra whitespace
+
+            if EQS[len(EQS) - 1] == '\n':
+                EQS = EQS[:len(EQS) - 1]
+            
+            if FIX[len(FIX) - 1] == '\n':
+                FIX = FIX[:len(FIX) - 1]
+            
+            if IND[len(IND) - 1] == '\n':
+                IND = IND[:len(IND) - 1]
+            
+            print(f"\n\n {EQS} \n {FIX} \n {IND}\n")
+            return render(request, 'index3.html', {'txt1': txt[:idx+2], 'txt2' : IND, 'txt3' : FIX, 'txt4' : EQS})
     return render(request, 'index3.html')
 
 def uploadPage(request):

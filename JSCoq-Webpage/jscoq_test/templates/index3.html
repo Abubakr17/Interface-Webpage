@@ -72,10 +72,33 @@
         below.
       </p>
 
-      {% if txt %}
+      {% if txt1 %}
       <textarea class="snippet">
-{% for line in txt %}{{line}}{% endfor %}
+{% for line in txt1 %}{{line}}{% endfor %}
 </textarea>
+
+<textarea class="snippet">
+(* Datatype Definitions *)
+
+{% for line in txt2 %}{{line}}{% endfor %}
+</textarea>
+
+<textarea class="snippet">
+{% for line in txt3 %}{{line}}{% endfor %}
+</textarea>
+
+<textarea class="snippet">
+(* Function Definitions *)
+
+{% for line in txt4 %}{{line}}{% endfor %}
+</textarea>
+
+<textarea class="snippet">
+(* Theorems *)
+
+Theorem test: forall n : Z, n = n.
+</textarea>
+
 {% else %}
       <textarea class="snippet">
 From stringSml Require Import stringSml.
@@ -90,8 +113,43 @@ From charSml Require Import charSml.
 From notationsSml Require Import notationsSml.
 From realSml Require Import realSml.
 From Coq Require Import Lia.
-{% endif %}
+From Equations Require Import Equations.
 </textarea>
+
+<textarea class="snippet">
+(* Datatype Definitions *)
+
+Inductive tree {_a : Type} :=
+  Empty
+| Node : tree * _a * tree -> tree.
+</textarea>
+
+<textarea class="snippet" id="inductive">
+(* Inductive Principles *)
+
+Fixpoint tree_ind_princip {_a : Type} (P : @tree _a -> Prop)
+(HE : P Empty) (HN : forall t1 x t2, P t1 -> P t2 -> P (Node(t1,x,t2)))
+(t : @tree _a) : P t := 
+  match t with 
+     Empty => HE
+  |  Node(t1,x,t2) => HN t1 x t2 (tree_ind_princip P HE HN t1)
+                    (tree_ind_princip P HE HN t2)
+end.
+</textarea>
+
+<textarea class="snippet">
+(* Function Definitions *)
+
+Equations treeSum (t1 : @tree Z) : Z :=
+treeSum Empty := 0;
+treeSum (Node(tl,x,tr)) := treeSum tl + x + treeSum tr.
+</textarea>
+<textarea class="snippet">
+(* Theorems *)
+
+Theorem test: forall n : Z, n = n.
+</textarea>
+{% endif %}
   
       <h4>Quick start</h4>
       <p>
@@ -211,6 +269,50 @@ From Coq Require Import Lia.
         /* Global reference */
         window.coq = res;
     });
+
+    function assert(condition, message) {
+    if (!condition) {
+        throw new Error(message || "Assertion failed");
+      }
+    }
+
+
+    window.onload = eraseFirstWindow
+
+    function hideLineNumber()
+    {
+      var y = document.getElementsByClassName("CodeMirror-linenumber CodeMirror-gutter-elt")
+      
+      for (let index = 0; index < y.length; index++) {
+        const element = y[index];
+        element.hidden = true
+        
+      }
+    }
+
+    function eraseFirstWindow()
+    {
+
+    /* Color-code */  
+
+      var x = document.getElementsByClassName("CodeMirror-scroll")
+      x[0].hidden = true
+
+      if (x.length > 2)
+      {
+        x[2].hidden = true
+      }
+      
+      var y = document.getElementsByClassName("CodeMirror cm-s-default jscoq")
+      assert(y.length == 5, "number of snippets is not 5")
+
+      y[1].firstChild.firstChild.readOnly = true 
+      y[3].firstChild.firstChild.readOnly = true
+
+    }
+
+    var timer = setInterval(hideLineNumber, 50)
+
   </script>
 </body>
 </html>
