@@ -93,10 +93,10 @@
 {% for line in txt4 %}{{line}}{% endfor %}
 </textarea>
 
-<textarea class="code">
+<textarea class="snippet">
 (* Theorems *)
 
-Theorem test123: forall n : Z, n = n.
+Theorem test: forall n : Z, n = n.
 </textarea>
 
 {% else %}
@@ -117,37 +117,17 @@ From Equations Require Import Equations.
 </textarea>
 
 <textarea class="snippet">
-(* Datatype Definitions *)
-
-Inductive tree {_a : Type} :=
-  Empty
-| Node : tree * _a * tree -> tree.
 </textarea>
 
 <textarea class="snippet" id="inductive">
-(* Inductive Principles *)
-
-Fixpoint tree_ind_princip {_a : Type} (P : @tree _a -> Prop)
-(HE : P Empty) (HN : forall t1 x t2, P t1 -> P t2 -> P (Node(t1,x,t2)))
-(t : @tree _a) : P t := 
-  match t with 
-     Empty => HE
-  |  Node(t1,x,t2) => HN t1 x t2 (tree_ind_princip P HE HN t1)
-                    (tree_ind_princip P HE HN t2)
-end.
 </textarea>
 
 <textarea class="snippet">
-(* Function Definitions *)
-
-Equations treeSum (t1 : @tree Z) : Z :=
-treeSum Empty := 0;
-treeSum (Node(tl,x,tr)) := treeSum tl + x + treeSum tr.
 </textarea>
-<textarea class="code">
+<textarea class="snippet">
 (* Theorems *)
 
-Theorem test123: forall n : Z, n = n.
+Theorem test: forall n : Z, n = n.
 </textarea>
 {% endif %}
   
@@ -254,8 +234,7 @@ Theorem test123: forall n : Z, n = n.
     if (!localStorage['scratchpad.last_filename'])
       setTimeout(() => document.body.classList.add('welcome'), 1500);
 
-    // Snippets are read-only while code is writeable
-    var jscoq_ids  = ['.snippet', '.code'];
+    var jscoq_ids  = ['.snippet'];
     var jscoq_opts = {
         implicit_libs: false,
         focus: false,
@@ -306,8 +285,8 @@ Theorem test123: forall n : Z, n = n.
       var y = document.getElementsByClassName("CodeMirror cm-s-default jscoq")
       assert(y.length == 5, "number of snippets is not 5")
 
-/*       y[1].firstChild.firstChild.readOnly = true 
-      y[3].firstChild.firstChild.readOnly = true */
+      y[1].firstChild.firstChild.readOnly = true 
+      y[3].firstChild.firstChild.readOnly = true
 
       var codeWindows = document.getElementsByClassName("CodeMirror-lines")
       var codeGutter = document.getElementsByClassName("CodeMirror-gutter CodeMirror-linenumbers")
